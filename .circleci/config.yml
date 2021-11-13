@@ -135,5 +135,4 @@ workflows:
     # Run the welcome/run job in its own container
     jobs:
      # - create_infrastructure
-      - create_infrastructure
-      - smoke_test
+      - configure_infrastructure
