@@ -203,19 +203,12 @@ jobs:
   # Note that the `--parameter-overrides` let you specify a value that override parameter value in the bucket.yml template file.
   
 
+   
+            
 workflows:
   # Name the workflow "welcome"
   my_workflow:
     # Run the welcome/run job in its own container
-    jobs:
-      - create_infrastructure
-      #- smoke_test:
-       #   requires: 
-        #    - create_infrastructure 
-     # - configure_infrastructure
-     
-workflows:
-  my_workflow:
     jobs:
       - create_and_deploy_front_end
       - promote_to_production:
@@ -225,5 +218,5 @@ workflows:
       - clean_up_old_front_end:
           requires:
             - get_last_deployment_id
-            - promote_to_production     
+            - promote_to_production            
      
